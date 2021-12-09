@@ -12,9 +12,10 @@ var helperColor = Color.fromRGBO(204, 163, 0, 1);
 
 class _MainFrameState extends State<MainFrame> {
 
+
   void _getDateApi (){
 
-
+    String url = "https://viacep.com.br/ws/69010001/json/";
 
   }
 
