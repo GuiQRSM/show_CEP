@@ -27,10 +27,35 @@ class _MainFrameState extends State<MainFrame> {
       body: Container(
         width: double.infinity,
         child: SingleChildScrollView(
-          padding: EdgeInsets.all(32),
+          padding: EdgeInsets.all(42),
           child: Column(
             children: <Widget>[
-
+              Padding(
+                  padding: EdgeInsets.only(top: 10),
+                child: Text(
+                  "-Call your CEP-",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 25
+                   ),
+                 ),
+               ),
+              Padding(
+                  padding: EdgeInsets.only(top: 40),
+                child: RaisedButton(
+                    onPressed: (){},
+                  color: helperColor,
+                  padding: EdgeInsets.all(20),
+                  child: Text(
+                    "Get CEP",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w700,
+                      fontSize: 25
+                    ),),
+                  ),
+                ),
             ],
           ),
         ),
