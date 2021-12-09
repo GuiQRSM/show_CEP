@@ -11,6 +11,13 @@ var pickColor = Color.fromRGBO(255, 214, 51, 1);
 var helperColor = Color.fromRGBO(204, 163, 0, 1);
 
 class _MainFrameState extends State<MainFrame> {
+
+  void _getDateApi (){
+
+
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +51,7 @@ class _MainFrameState extends State<MainFrame> {
               Padding(
                   padding: EdgeInsets.only(top: 40),
                 child: RaisedButton(
-                    onPressed: (){},
+                    onPressed: _getDateApi,
                   color: helperColor,
                   padding: EdgeInsets.all(20),
                   child: Text(
