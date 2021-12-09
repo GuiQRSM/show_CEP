@@ -7,12 +7,16 @@ class MainFrame extends StatefulWidget {
   _MainFrameState createState() => _MainFrameState();
 }
 
+var pickColor = Color.fromRGBO(255, 214, 51, 1);
+var helperColor = Color.fromRGBO(204, 163, 0, 1);
+
 class _MainFrameState extends State<MainFrame> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: pickColor,
       appBar: AppBar(
-
+        backgroundColor: helperColor,
       ),
       body: Container(
         width: double.infinity,
