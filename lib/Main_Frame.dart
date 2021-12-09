@@ -16,6 +16,12 @@ class _MainFrameState extends State<MainFrame> {
     return Scaffold(
       backgroundColor: pickColor,
       appBar: AppBar(
+        title: Text(
+          "Show CEP",
+        style: TextStyle(
+          color: Colors.black,
+          fontWeight: FontWeight.w700
+        ),),
         backgroundColor: helperColor,
       ),
       body: Container(
