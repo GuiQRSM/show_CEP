@@ -10,6 +10,9 @@ class MainFrame extends StatefulWidget {
 class _MainFrameState extends State<MainFrame> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: ,
+      body: ,
+    );
   }
 }
