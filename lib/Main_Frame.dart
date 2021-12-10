@@ -17,10 +17,15 @@ var helperColor = Color.fromRGBO(204, 163, 0, 1);
 class _MainFrameState extends State<MainFrame> {
 
 //metodo que ativa a requisição
- void _getDateApi (){
+ void _getDateApi () async {
+   
+  getApi.Response response;
+  var url = Uri.parse("https://viacep.com.br/ws/69067080/json/");
 
-   String url = "https://viacep.com.br/ws/69067080/json/";
-   getApi.Response response;
+  response = await getApi.get(url);
+
+  print("informações recuperadas: " + response.body);
+  print("Veredito do SC: " + response.statusCode.toString());
 
  }
 
