@@ -35,6 +35,16 @@ class _MainFrameState extends State<MainFrame> {
   String uf = retorno["uf"];
   String ddd = retorno["ddd"];
 
+  setState(() {
+    _dinamicTextApi =  "CEP: ${cep}\n"
+        "Logradouro: ${logradouro}\n"
+        "Bairro: ${bairro}\n"
+        "Localidade: ${localidade}\n"
+        "UF: ${uf}\n"
+        "DDD: ${ddd}";
+  });
+
+  //GHOST EXIBITION
   print(
     "CEP: ${cep}\n"
     "Logradouro: ${logradouro}\n"
@@ -65,7 +75,7 @@ class _MainFrameState extends State<MainFrame> {
       body: Container(
         width: double.infinity,
         child: SingleChildScrollView(
-          padding: EdgeInsets.all(42),
+          padding: EdgeInsets.all(32),
           child: Column(
             children: <Widget>[
               Padding(
