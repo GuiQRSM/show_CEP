@@ -101,7 +101,7 @@ class _MainFrameState extends State<MainFrame> {
                   style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.w700,
-                      fontSize: 22
+                      fontSize: 17,
                   ),
                 ),
               )
