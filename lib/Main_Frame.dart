@@ -17,6 +17,8 @@ var helperColor = Color.fromRGBO(204, 163, 0, 1);
 
 class _MainFrameState extends State<MainFrame> {
 
+  var _dinamicTextApi = "";
+
 //metodo que ativa a requisição
  void _getDateApi () async {
    
@@ -33,14 +35,14 @@ class _MainFrameState extends State<MainFrame> {
   String uf = retorno["uf"];
   String ddd = retorno["ddd"];
 
-  /*print(
+  print(
     "CEP: ${cep}\n"
     "Logradouro: ${logradouro}\n"
     "Bairro: ${bairro}\n"
     "Localidade: ${localidade}\n"
     "UF: ${uf}\n"
     "DDD: ${ddd}",
-  );*/
+  );
 
   //print("informações recuperadas: " + response.body);
   //print("Veredito do SC: " + response.statusCode.toString());
@@ -92,6 +94,17 @@ class _MainFrameState extends State<MainFrame> {
                     ),),
                   ),
                 ),
+              Padding(
+                  padding: EdgeInsets.only(top: 18),
+                child: Text(
+                  "$_dinamicTextApi",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 22
+                  ),
+                ),
+              )
             ],
           ),
         ),
