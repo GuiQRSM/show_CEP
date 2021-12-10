@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as getApi;
+
+
+
 
 class MainFrame extends StatefulWidget {
   const MainFrame({Key? key}) : super(key: key);
@@ -12,12 +16,11 @@ var helperColor = Color.fromRGBO(204, 163, 0, 1);
 
 class _MainFrameState extends State<MainFrame> {
 
-
+//metodo que ativa a requisição
  void _getDateApi (){
 
-   String url = "https://viacep.com.br/ws/69010001/json/";
-
-
+   String url = "https://viacep.com.br/ws/69067080/json/";
+   getApi.Response response;
 
  }
 
