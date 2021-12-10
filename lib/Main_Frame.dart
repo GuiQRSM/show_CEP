@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as getApi;
+import 'dart:convert';
 
 
 
@@ -20,12 +21,29 @@ class _MainFrameState extends State<MainFrame> {
  void _getDateApi () async {
    
   getApi.Response response;
-  var url = Uri.parse("https://viacep.com.br/ws/69067080/json/");
+  var url = Uri.parse("https://viacep.com.br/ws/67145100/json/");
 
   response = await getApi.get(url);
 
-  print("informações recuperadas: " + response.body);
-  print("Veredito do SC: " + response.statusCode.toString());
+  Map<String, dynamic> retorno = json.decode(response.body);
+  String cep = retorno["cep"];
+  String logradouro = retorno["logradouro"];
+  String bairro = retorno["bairro"];
+  String localidade = retorno["localidade"];
+  String uf = retorno["uf"];
+  String ddd = retorno["ddd"];
+
+  /*print(
+    "CEP: ${cep}\n"
+    "Logradouro: ${logradouro}\n"
+    "Bairro: ${bairro}\n"
+    "Localidade: ${localidade}\n"
+    "UF: ${uf}\n"
+    "DDD: ${ddd}",
+  );*/
+
+  //print("informações recuperadas: " + response.body);
+  //print("Veredito do SC: " + response.statusCode.toString());
 
  }
 
