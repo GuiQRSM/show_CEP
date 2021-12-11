@@ -43,7 +43,7 @@ void _getDateApi () {
           child: Column(
             children: <Widget>[
               Padding(
-                  padding: EdgeInsets.only(top: 10),
+                  padding: EdgeInsets.only(top: 10, bottom: 14),
                 child: Text(
                   "-Call your CEP-",
                   style: TextStyle(
@@ -54,7 +54,29 @@ void _getDateApi () {
                  ),
                ),
               Padding(
-                  padding: EdgeInsets.only(top: 40),
+                  padding: EdgeInsets.only(top: 22),
+                child: TextField(
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    labelText: "Implemente seu CEP:",
+                    labelStyle: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w700,
+                      color: Colors.black,
+                    ),
+                  ),
+                  cursorColor: Colors.black,
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.black,
+                  ),
+                  maxLength: 8,
+                  maxLengthEnforced: true,
+                ),
+              ),
+              Padding(
+                  padding: EdgeInsets.only(top: 12),
                 child: RaisedButton(
                     onPressed: _getDateApi,
                   color: Colors.black,
