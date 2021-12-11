@@ -18,6 +18,8 @@ class _MainFrameState extends State<MainFrame> {
 
   var _dinamicTextApi = "";
 
+  TextEditingController _controllerCEP = TextEditingController();
+
 void _getDateApi () {
 
 }
@@ -73,6 +75,7 @@ void _getDateApi () {
                   ),
                   maxLength: 8,
                   maxLengthEnforced: true,
+                  controller: _controllerCEP,
                 ),
               ),
               Padding(
