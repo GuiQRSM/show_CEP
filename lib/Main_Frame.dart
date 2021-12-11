@@ -24,6 +24,8 @@ class _MainFrameState extends State<MainFrame> {
 void _getDateApi () {
 
   http.Response response;
+  var cep = _controllerCEP.text;
+  var url = Uri.parse("https://viacep.com.br/ws/${cep}/json/");
 
 }
 
