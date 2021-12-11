@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as getApi;
-import 'dart:convert';
+
 
 
 
@@ -19,45 +18,10 @@ class _MainFrameState extends State<MainFrame> {
 
   var _dinamicTextApi = "";
 
-//metodo que ativa a requisição
- void _getDateApi () async {
-   
-  getApi.Response response;
-  var url = Uri.parse("https://viacep.com.br/ws/67145100/json/");
+void _getDateApi () {
 
-  response = await getApi.get(url);
+}
 
-  Map<String, dynamic> retorno = json.decode(response.body);
-  String cep = retorno["cep"];
-  String logradouro = retorno["logradouro"];
-  String bairro = retorno["bairro"];
-  String localidade = retorno["localidade"];
-  String uf = retorno["uf"];
-  String ddd = retorno["ddd"];
-
-  setState(() {
-    _dinamicTextApi =  "CEP: ${cep}\n"
-        "Logradouro: ${logradouro}\n"
-        "Bairro: ${bairro}\n"
-        "Localidade: ${localidade}\n"
-        "UF: ${uf}\n"
-        "DDD: ${ddd}";
-  });
-
-  //GHOST EXIBITION
-  print(
-    "CEP: ${cep}\n"
-    "Logradouro: ${logradouro}\n"
-    "Bairro: ${bairro}\n"
-    "Localidade: ${localidade}\n"
-    "UF: ${uf}\n"
-    "DDD: ${ddd}",
-  );
-
-  //print("informações recuperadas: " + response.body);
-  //print("Veredito do SC: " + response.statusCode.toString());
-
- }
 
   @override
   Widget build(BuildContext context) {
@@ -92,7 +56,7 @@ class _MainFrameState extends State<MainFrame> {
               Padding(
                   padding: EdgeInsets.only(top: 40),
                 child: RaisedButton(
-                    onPressed: _getDateApi,
+                    onPressed: (){},
                   color: helperColor,
                   padding: EdgeInsets.all(20),
                   child: Text(
@@ -105,13 +69,13 @@ class _MainFrameState extends State<MainFrame> {
                   ),
                 ),
               Padding(
-                  padding: EdgeInsets.only(top: 18),
+                  padding: EdgeInsets.only(top: 22),
                 child: Text(
                   "$_dinamicTextApi",
                   style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.w700,
-                      fontSize: 17,
+                      fontSize: 19,
                   ),
                 ),
               )
