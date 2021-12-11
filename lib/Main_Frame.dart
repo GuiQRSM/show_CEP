@@ -48,8 +48,15 @@ class _MainFrameState extends State<MainFrame> {
                         "DDD: ${ddd}";
     });
 
+    _cleanField();
+
   }
 
+  void _cleanField() {
+
+    _controllerCEP.text = "";
+
+  }
 
   @override
   Widget build(BuildContext context) {
