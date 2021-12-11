@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
+import 'package:http/http.dart' as http;
 
 
 
@@ -23,7 +23,7 @@ class _MainFrameState extends State<MainFrame> {
 
 void _getDateApi () {
 
-
+  http.Response response;
 
 }
 
