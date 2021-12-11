@@ -56,7 +56,7 @@ void _getDateApi () {
               Padding(
                   padding: EdgeInsets.only(top: 40),
                 child: RaisedButton(
-                    onPressed: (){},
+                    onPressed: _getDateApi,
                   color: Colors.black,
                   padding: EdgeInsets.all(20),
                   child: Text(
