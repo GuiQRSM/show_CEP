@@ -33,14 +33,19 @@ class _MainFrameState extends State<MainFrame> {
     Map<String, dynamic> retorno = json.decode(response.body);
 
     String logradouro = retorno["logradouro"];
-    String complemento = retorno["complemento"];
+    //String complemento = retorno["complemento"];
     String bairro = retorno["bairro"];
     String localidade = retorno["localidade"];
     String uf = retorno["uf"];
     String ddd = retorno["ddd"];
 
     setState(() {
-
+      _dinamicTextApi = "Logradouro: ${logradouro}\n"
+                        //"Complemento: ${complemento}\n"
+                        "Bairro: ${bairro}\n"
+                        "Localidade: ${localidade}\n"
+                        "UF: ${uf}\n"
+                        "DDD: ${ddd}";
     });
 
   }
