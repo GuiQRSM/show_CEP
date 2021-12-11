@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 
 
@@ -21,15 +22,17 @@ class _MainFrameState extends State<MainFrame> {
 
   TextEditingController _controllerCEP = TextEditingController();
 
-void _getDateApi () async {
+  void _getDateApi () async {
 
-  http.Response response;
-  var cep = _controllerCEP.text;
-  var url = Uri.parse("https://viacep.com.br/ws/${cep}/json/");
+    var cep = _controllerCEP.text;
+    var url = Uri.parse("https://viacep.com.br/ws/${cep}/json/");
+    http.Response response;
 
-  response = await http.get(url);
+    response = await http.get(url);
 
-}
+    Map<String, dynamic> retorno = json.decode(response.body);
+
+  }
 
 
   @override
