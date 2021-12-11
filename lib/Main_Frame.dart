@@ -57,12 +57,12 @@ void _getDateApi () {
                   padding: EdgeInsets.only(top: 40),
                 child: RaisedButton(
                     onPressed: (){},
-                  color: helperColor,
+                  color: Colors.black,
                   padding: EdgeInsets.all(20),
                   child: Text(
                     "Get CEP",
                     style: TextStyle(
-                        color: Colors.black,
+                        color: helperColor,
                         fontWeight: FontWeight.w700,
                       fontSize: 25
                     ),),
