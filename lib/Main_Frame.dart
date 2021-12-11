@@ -21,11 +21,13 @@ class _MainFrameState extends State<MainFrame> {
 
   TextEditingController _controllerCEP = TextEditingController();
 
-void _getDateApi () {
+void _getDateApi () async {
 
   http.Response response;
   var cep = _controllerCEP.text;
   var url = Uri.parse("https://viacep.com.br/ws/${cep}/json/");
+
+  response = await http.get(url);
 
 }
 
