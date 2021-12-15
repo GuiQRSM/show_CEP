@@ -31,7 +31,12 @@ class _ListFrameState extends State<ListFrame> {
         width: double.infinity,
         child: ListView.builder(
           padding: EdgeInsets.all(32),
-            itemBuilder: null,
+            itemCount: 9,
+            itemBuilder: (context, indice){
+
+            return ListTile();
+
+            },
         ),
       ),
     );
