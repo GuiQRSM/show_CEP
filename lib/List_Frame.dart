@@ -17,14 +17,12 @@ class _ListFrameState extends State<ListFrame> {
 
   void _getItems (){
 
-    for(int g = 0; g <= 10; g++){
 
-      List _myItems = [];
+    for(int g = 0; g <= 10; g++){
       Map<String, dynamic> items = Map();
       items["title"] = "Elemento: ${g}";
       items["desc"] = "Informações sobre o elemento ${g}";
       _myItems.add(items);
-
     }
 
   }
@@ -60,16 +58,18 @@ class _ListFrameState extends State<ListFrame> {
 
             return ListTile(
               title: Text(
-                  indice.toString(),
+                  title.toString(),
               style: TextStyle(
-                fontSize: 17,
+                fontSize: 14,
                 fontWeight: FontWeight.w500,
+                color: Colors.black
               ),),
               subtitle: Text(
-                "-List Test-",
+                desc.toString(),
                 style: TextStyle(
-                  fontSize: 17,
+                  fontSize: 14,
                   fontWeight: FontWeight.w500,
+                  color: Colors.black
                 ),
               ),
             );
