@@ -14,6 +14,8 @@ var helperColor = Color.fromRGBO(204, 163, 0, 1);
 class _ListFrameState extends State<ListFrame> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      backgroundColor: helperColor,
+    );
   }
 }
