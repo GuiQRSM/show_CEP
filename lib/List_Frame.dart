@@ -5,7 +5,11 @@ class ListFrame extends StatefulWidget {
 
   @override
   _ListFrameState createState() => _ListFrameState();
+
 }
+
+var pickColor = Color.fromRGBO(255, 214, 51, 1);
+var helperColor = Color.fromRGBO(204, 163, 0, 1);
 
 class _ListFrameState extends State<ListFrame> {
   @override
