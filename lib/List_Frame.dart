@@ -55,7 +55,8 @@ class _ListFrameState extends State<ListFrame> {
             itemBuilder: (context, indice){
 
             Map<String, dynamic> items = _myItems[indice];
-
+            dynamic title = items["title"];
+            dynamic desc = items["desc"];
 
             return ListTile(
               title: Text(
