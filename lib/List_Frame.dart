@@ -12,6 +12,7 @@ var pickColor = Color.fromRGBO(255, 214, 51, 1);
 var helperColor = Color.fromRGBO(204, 163, 0, 1);
 
 class _ListFrameState extends State<ListFrame> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,12 +31,25 @@ class _ListFrameState extends State<ListFrame> {
       body: Container(
         width: double.infinity,
         child: ListView.builder(
-          padding: EdgeInsets.all(32),
+          padding: EdgeInsets.all(22),
             itemCount: 9,
             itemBuilder: (context, indice){
 
-            return ListTile();
-
+            return ListTile(
+              title: Text(
+                  indice.toString(),
+              style: TextStyle(
+                fontSize: 17,
+                fontWeight: FontWeight.w500,
+              ),),
+              subtitle: Text(
+                "-List Test-",
+                style: TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            );
             },
         ),
       ),
