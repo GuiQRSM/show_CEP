@@ -27,6 +27,13 @@ class _ListFrameState extends State<ListFrame> {
         backgroundColor: pickColor,
         iconTheme: IconThemeData(color: Colors.black),
       ),
+      body: Container(
+        width: double.infinity,
+        child: ListView.builder(
+          padding: EdgeInsets.all(32),
+            itemBuilder: null,
+        ),
+      ),
     );
   }
 }
