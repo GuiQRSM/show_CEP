@@ -136,6 +136,22 @@ class _MainFrameState extends State<MainFrame> {
                       fontSize: 19,
                   ),
                 ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 60),
+                child: RaisedButton(
+                  onPressed: (){},
+                  padding: EdgeInsets.all(20),
+                  color: Colors.black,
+                  child: Text(
+                      "Get List",
+                    style: TextStyle(
+                        color: helperColor,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 25
+                    ),
+                  ),
+                ),
               )
             ],
           ),
