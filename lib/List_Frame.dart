@@ -19,6 +19,7 @@ class _ListFrameState extends State<ListFrame> {
 
     for(int g = 0; g <= 10; g++){
 
+      List _myItems = [];
       Map<String, dynamic> items = Map();
       items["title"] = "Elemento: ${g}";
       items["desc"] = "Informações sobre o elemento ${g}";
@@ -30,6 +31,9 @@ class _ListFrameState extends State<ListFrame> {
 
   @override
   Widget build(BuildContext context) {
+
+    _getItems();
+
     return Scaffold(
       backgroundColor: helperColor,
       appBar: AppBar(
