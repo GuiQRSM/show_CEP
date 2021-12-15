@@ -54,6 +54,9 @@ class _ListFrameState extends State<ListFrame> {
             itemCount: _myItems.length,
             itemBuilder: (context, indice){
 
+            Map<String, dynamic> items = _myItems[indice];
+
+
             return ListTile(
               title: Text(
                   indice.toString(),
