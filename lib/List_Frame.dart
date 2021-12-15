@@ -16,6 +16,17 @@ class _ListFrameState extends State<ListFrame> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: helperColor,
+      appBar: AppBar(
+        title: Text(
+            "ListFrame",
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        backgroundColor: pickColor,
+        iconTheme: IconThemeData(color: Colors.black),
+      ),
     );
   }
 }
