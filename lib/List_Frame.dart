@@ -17,6 +17,7 @@ class _ListFrameState extends State<ListFrame> {
 
   void _getMyItems(){
 
+    _myItems = [];
     for(int g = 0; g <= 10; g++){
 
       Map<String, dynamic> items = Map();
