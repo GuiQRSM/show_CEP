@@ -65,7 +65,24 @@ class _ListFrameState extends State<ListFrame> {
                       context: context,
                       builder: (context){
 
-                        return AlertDialog();
+                        return AlertDialog(
+                          backgroundColor: pickColor,
+                          title: Text(
+                            title.toString(),
+                          style: TextStyle(
+                              fontSize: 19,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black
+                          ),),
+                          content: Text(
+                            desc.toString(),
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black
+                            ),
+                          ),
+                        );
 
                       }
                       );
