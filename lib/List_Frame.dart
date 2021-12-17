@@ -61,6 +61,12 @@ class _ListFrameState extends State<ListFrame> {
               return ListTile(
                 onTap: (){
 
+                  showDialog(
+                      context: context,
+                      builder: (context){
+
+                      }
+                      );
                 },
                 title: Text(
                     title.toString(),
