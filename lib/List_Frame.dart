@@ -88,7 +88,7 @@ class _ListFrameState extends State<ListFrame> {
                               padding: EdgeInsets.only(top:10, bottom: 10),
                                 color: helperColor,
                                 onPressed: (){
-
+                                Navigator.pop(context);
                                 },
                               child: Text(
                                 "Fechar",
