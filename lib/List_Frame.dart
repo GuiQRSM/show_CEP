@@ -13,6 +13,11 @@ var helperColor = Color.fromRGBO(204, 163, 0, 1);
 
 class _ListFrameState extends State<ListFrame> {
 
+  List _myItems = [];
+
+  void _getMyItems(){
+
+  }
 
   @override
   Widget build(BuildContext context) {
