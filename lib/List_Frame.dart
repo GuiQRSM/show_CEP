@@ -83,6 +83,23 @@ class _ListFrameState extends State<ListFrame> {
                                 color: Colors.black
                             ),
                           ),
+                          actions: <Widget>[
+                            RaisedButton(
+                              padding: EdgeInsets.only(top:10, bottom: 10),
+                                color: helperColor,
+                                onPressed: (){
+
+                                },
+                              child: Text(
+                                "Fechar",
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.black
+                                ),
+                              ),
+                            )
+                          ],
                         );
                        });
                 },
