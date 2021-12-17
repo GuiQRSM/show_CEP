@@ -33,7 +33,14 @@ class _ListFrameState extends State<ListFrame> {
       body: Container(
         width: double.infinity,
         child: ListView.builder(
-            itemBuilder: itemBuilder,
+          padding: EdgeInsets.all(16),
+          itemCount: 9,
+            itemBuilder: (context, indice){
+              return ListTile(
+                title: Text(indice.toString()),
+                subtitle: Text("descrição para o 'tile:,'"),
+              );
+            },
         ),
       ),
     );
