@@ -19,6 +19,11 @@ class _ListFrameState extends State<ListFrame> {
 
     for(int g = 0; g <= 10; g++){
 
+      Map<String, dynamic> items = Map();
+      items["title"] = "Elemento ${g};";
+      items["desc"] = "Descrição do elemento ${g}!";
+      _myItems.add(items);
+
     }
 
   }
