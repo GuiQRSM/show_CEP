@@ -32,7 +32,9 @@ class _ListFrameState extends State<ListFrame> {
       ),
       body: Container(
         width: double.infinity,
-        //child: ,
+        child: ListView.builder(
+            itemBuilder: itemBuilder,
+        ),
       ),
     );
   }
