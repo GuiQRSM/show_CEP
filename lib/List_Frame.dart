@@ -13,24 +13,9 @@ var helperColor = Color.fromRGBO(204, 163, 0, 1);
 
 class _ListFrameState extends State<ListFrame> {
 
-  List _myItems = [];
-
-  void _getItems (){
-
-
-    for(int g = 0; g <= 10; g++){
-      Map<String, dynamic> items = Map();
-      items["title"] = "Elemento: ${g}";
-      items["desc"] = "Informações sobre o elemento ${g}";
-      _myItems.add(items);
-    }
-
-  }
 
   @override
   Widget build(BuildContext context) {
-
-    _getItems();
 
     return Scaffold(
       backgroundColor: helperColor,
@@ -47,34 +32,7 @@ class _ListFrameState extends State<ListFrame> {
       ),
       body: Container(
         width: double.infinity,
-        child: ListView.builder(
-          padding: EdgeInsets.all(22),
-            itemCount: _myItems.length,
-            itemBuilder: (context, indice){
-
-            Map<String, dynamic> items = _myItems[indice];
-            dynamic title = items["title"];
-            dynamic desc = items["desc"];
-
-            return ListTile(
-              title: Text(
-                  title.toString(),
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
-                color: Colors.black
-              ),),
-              subtitle: Text(
-                desc.toString(),
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.black
-                ),
-              ),
-            );
-            },
-        ),
+        //child: ,
       ),
     );
   }
