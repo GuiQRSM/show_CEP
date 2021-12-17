@@ -50,8 +50,13 @@ class _ListFrameState extends State<ListFrame> {
         width: double.infinity,
         child: ListView.builder(
           padding: EdgeInsets.all(16),
-          itemCount: 9,
+          itemCount: _myItems.length,
             itemBuilder: (context, indice){
+
+            Map<String, dynamic> items = _myItems[indice];
+            dynamic title = items["title"];
+            dynamic desc = items["desc"];
+
               return ListTile(
                 title: Text(indice.toString()),
                 subtitle: Text("descrição para o 'tile:,'"),
