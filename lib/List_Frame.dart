@@ -59,8 +59,21 @@ class _ListFrameState extends State<ListFrame> {
             dynamic desc = items["desc"];
 
               return ListTile(
-                title: Text(title.toString()),
-                subtitle: Text(desc.toString()),
+                title: Text(
+                    title.toString(),
+                style: TextStyle(
+                  fontSize: 19,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black
+                ),),
+                subtitle: Text(
+                    desc.toString(),
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black
+                  ),
+                ),
               );
             },
         ),
