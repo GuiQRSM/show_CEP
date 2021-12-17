@@ -31,6 +31,8 @@ class _ListFrameState extends State<ListFrame> {
   @override
   Widget build(BuildContext context) {
 
+    _getMyItems();
+
     return Scaffold(
       backgroundColor: helperColor,
       appBar: AppBar(
