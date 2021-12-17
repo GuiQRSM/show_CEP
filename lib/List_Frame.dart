@@ -74,6 +74,7 @@ class _ListFrameState extends State<ListFrame> {
                               fontWeight: FontWeight.w500,
                               color: Colors.black
                           ),),
+                          titlePadding: EdgeInsets.all(32),
                           content: Text(
                             desc.toString(),
                             style: TextStyle(
@@ -83,9 +84,7 @@ class _ListFrameState extends State<ListFrame> {
                             ),
                           ),
                         );
-
-                      }
-                      );
+                       });
                 },
                 title: Text(
                     title.toString(),
