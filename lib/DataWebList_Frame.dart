@@ -19,6 +19,7 @@ class _DataWebListState extends State<DataWebList> {
 
     http.Response response;
     var url = Uri.parse("https://jsonplaceholder.typicode.com/comments");
+    response = await http.get(url);
 
   }
 
