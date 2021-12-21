@@ -14,6 +14,7 @@ class _DataWebListState extends State<DataWebList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: helperColor,
 
     );
   }
