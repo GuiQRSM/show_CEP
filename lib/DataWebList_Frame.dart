@@ -22,10 +22,12 @@ class _DataWebListState extends State<DataWebList> {
     response = await http.get(url);
 
     var dataJson = json.decode(response.body);
-    
+
+    List<Coments> _receiver = [];
     for(var runner in dataJson){
       
       Coments inst = Coments(runner["id"], runner["name"], runner["email"]);
+      _receiver.add(inst);
       
     }
 
