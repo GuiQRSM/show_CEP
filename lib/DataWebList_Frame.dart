@@ -73,6 +73,9 @@ class _DataWebListState extends State<DataWebList> {
                   itemCount: snapshot.data!.length,
                     itemBuilder: (context, index){
 
+                    List<Coments> list = snapshot.data!;
+                    Coments show = list[index];
+
                     return ListTile(
                       title: Text(
                         "Teste\n"
