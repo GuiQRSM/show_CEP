@@ -41,7 +41,13 @@ class _DataWebListState extends State<DataWebList> {
       backgroundColor: helperColor,
       body: FutureBuilder<List<Coments>>(
         future: _getDataList(),
-        builder: (context, snapshot){},
+        builder: (context, snapshot){
+
+          switch(snapshot.connectionState){
+
+          }
+
+        },
       ),
     );
   }
