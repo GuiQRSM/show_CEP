@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:show_cep/Class_Coments.dart';
 
 class DataWebList extends StatefulWidget {
   const DataWebList({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ var helperColor = Color.fromRGBO(204, 163, 0, 1);
 
 class _DataWebListState extends State<DataWebList> {
 
-  Future<List> _getDataList () async {
+  Future<List<Coments>> _getDataList () async {
 
   }
 
