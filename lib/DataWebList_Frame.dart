@@ -18,6 +18,7 @@ class _DataWebListState extends State<DataWebList> {
   Future<List<Coments>> _getDataList () async {
 
     http.Response response;
+    var url = Uri.parse("https://jsonplaceholder.typicode.com/comments");
 
   }
 
