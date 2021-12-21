@@ -12,7 +12,7 @@ var helperColor = Color.fromRGBO(204, 163, 0, 1);
 
 class _DataWebListState extends State<DataWebList> {
 
-  void _getDataList () async {
+  Future<List> _getDataList () async {
 
   }
 
