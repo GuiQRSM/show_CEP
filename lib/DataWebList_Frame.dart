@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:show_cep/Class_Coments.dart';
+import 'package:show_cep/List_Frame.dart';
 
 class DataWebList extends StatefulWidget {
   const DataWebList({Key? key}) : super(key: key);
@@ -39,6 +40,17 @@ class _DataWebListState extends State<DataWebList> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: helperColor,
+      appBar: AppBar(
+        title: Text(
+            "Data Web List",
+        style: TextStyle(
+            color: Colors.black
+        ),),
+        backgroundColor: pickColor,
+        iconTheme: IconThemeData(
+          color: Colors.black
+        ),
+      ),
       body: FutureBuilder<List<Coments>>(
         future: _getDataList(),
         builder: (context, snapshot) {
@@ -57,7 +69,6 @@ class _DataWebListState extends State<DataWebList> {
               if(snapshot.hasError){
                 print("Erro ao carregar dados!");
               }else{
-
                 return ListView.builder(
                   itemCount: snapshot.data!.length,
                     itemBuilder: (context, index){
@@ -78,9 +89,7 @@ class _DataWebListState extends State<DataWebList> {
                             fontWeight: FontWeight.w500,
                             color: Colors.black
                         ),),
-
                     );
-
                     },
                 );
               }
