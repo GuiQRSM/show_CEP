@@ -40,7 +40,7 @@ class _DataWebListState extends State<DataWebList> {
     return Scaffold(
       backgroundColor: helperColor,
       body: FutureBuilder<List<Coments>>(
-        future: ,
+        future: _getDataList(),
         builder: (context, snapshot){},
       ),
     );
