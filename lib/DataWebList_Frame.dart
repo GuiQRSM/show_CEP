@@ -44,7 +44,28 @@ class _DataWebListState extends State<DataWebList> {
         builder: (context, snapshot){
 
           switch(snapshot.connectionState){
+            case ConnectionState.waiting :
+              print("Aguardando dados...");
+              break;
+            case ConnectionState.done :
+              if(snapshot.hasError){
+                print("Erro ao carregar dados!");
+              }else{
 
+                return ListView.builder(
+                  itemCount: snapshot.data!.length,
+                    itemBuilder: (context, index){
+
+                    return ListTile(
+                      title: Text("Teste"),
+                      subtitle: Text("Teste"),
+
+                    );
+
+                    },
+                );
+
+              }
           }
 
         },
