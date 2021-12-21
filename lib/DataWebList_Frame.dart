@@ -41,11 +41,17 @@ class _DataWebListState extends State<DataWebList> {
       backgroundColor: helperColor,
       body: FutureBuilder<List<Coments>>(
         future: _getDataList(),
-        builder: (context, snapshot){
+        builder: (context, snapshot) {
+
+          var widget;
 
           switch(snapshot.connectionState){
             case ConnectionState.waiting :
-              print("Aguardando dados...");
+              widget = Center(
+                child: CircularProgressIndicator(
+                  color: Colors.black,
+                ),
+              );
               break;
             case ConnectionState.done :
               if(snapshot.hasError){
@@ -57,17 +63,29 @@ class _DataWebListState extends State<DataWebList> {
                     itemBuilder: (context, index){
 
                     return ListTile(
-                      title: Text("Teste"),
-                      subtitle: Text("Teste"),
+                      title: Text(
+                        "Teste\n"
+                        "Teste",
+                      style: TextStyle(
+                        fontSize: 21,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black
+                      ),),
+                      subtitle: Text(
+                          "Teste",
+                        style: TextStyle(
+                            fontSize: 17,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.black
+                        ),),
 
                     );
 
                     },
                 );
-
               }
           }
-
+          return widget;
         },
       ),
     );
