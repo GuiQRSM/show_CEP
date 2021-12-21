@@ -78,15 +78,15 @@ class _DataWebListState extends State<DataWebList> {
 
                     return ListTile(
                       title: Text(
-                        "Teste\n"
-                        "Teste",
+                        "ID: ${show.id.toString()}\n"
+                        "Name: ${show.name.toString()}",
                       style: TextStyle(
                         fontSize: 21,
                         fontWeight: FontWeight.w600,
                         color: Colors.black
                       ),),
                       subtitle: Text(
-                          "Teste",
+                          "E-mail: ${show.email.toString()}",
                         style: TextStyle(
                             fontSize: 17,
                             fontWeight: FontWeight.w500,
