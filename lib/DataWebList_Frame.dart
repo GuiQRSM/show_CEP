@@ -21,6 +21,8 @@ class _DataWebListState extends State<DataWebList> {
     var url = Uri.parse("https://jsonplaceholder.typicode.com/comments");
     response = await http.get(url);
 
+    var dataJson = json.decode(response.body);
+
   }
 
   @override
