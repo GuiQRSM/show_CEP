@@ -26,12 +26,14 @@ class _ListFrameState extends State<ListFrame> {
 
     var dataJson = json.decode(response.body);
 
+    List<Todos> _receiver = [];
     for(var runner in dataJson){
 
       Todos inst = Todos(runner["id"], runner["title"], runner["completed"]);
+      _receiver.add(inst);
 
     }
-
+    return _receiver;
   }
 
   @override
