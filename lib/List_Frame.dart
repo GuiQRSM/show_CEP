@@ -58,8 +58,16 @@ class _ListFrameState extends State<ListFrame> {
         future: _getMyItems(),
         builder: (context, snapshot) {
 
+          var widget;
+
           switch(snapshot.connectionState){
             case ConnectionState.waiting :
+              widget = Center(
+                child: CircularProgressIndicator(
+                  color: Colors.black,
+                ),
+              );
+
               break;
             case ConnectionState.done :
               if(snapshot.hasError){
@@ -67,8 +75,8 @@ class _ListFrameState extends State<ListFrame> {
               }else{
                 return ListView.builder(
                   padding: EdgeInsets.all(16),
-                  itemCount: ,
-                  itemBuilder: (context, indice){
+                  itemCount: snapshot.data!.length,
+                  itemBuilder: (context, index){
 
 
 
@@ -137,7 +145,7 @@ class _ListFrameState extends State<ListFrame> {
                 );
               }
           }
-
+          return widget;
         },
       ),
     );

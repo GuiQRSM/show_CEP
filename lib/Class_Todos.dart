@@ -3,13 +3,13 @@ class Todos {
 
   int _id;
   String _title;
-  String _comp;
+  bool _comp;
 
   Todos(this._id, this._title, this._comp);
 
-  String get comp => _comp;
+  bool get comp => _comp;
 
-  set comp(String value) {
+  set comp(bool value) {
     _comp = value;
   }
 
@@ -24,5 +24,4 @@ class Todos {
   set id(int value) {
     _id = value;
   }
-
 }
