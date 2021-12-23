@@ -38,6 +38,13 @@ class _ListFrameState extends State<ListFrame> {
 
   void _getPost() async {
 
+    var _corpo = json.encode(
+        {
+      "userId": 32,
+      "id": 20,
+      "title": "Requisições POST",
+      "completed": false
+    });
     http.Response response;
     var url = Uri.parse("https://jsonplaceholder.typicode.com/posts");
     response = await http.post(url);
