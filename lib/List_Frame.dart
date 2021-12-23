@@ -63,21 +63,125 @@ class _ListFrameState extends State<ListFrame> {
         padding: EdgeInsets.all(16),
         child: Column(
           children: <Widget>[
-            Padding(
-              padding: EdgeInsets.only(top: 10),
-              child: RaisedButton(
-                  onPressed: (){},
-                padding: EdgeInsets.all(13),
-                color: Colors.black,
-                child: Text(
-                  "Enviar",
-                  style: TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.w500,
-                    color: helperColor,
-                  ),
+           Row(
+             mainAxisAlignment: MainAxisAlignment.center,
+             children: <Widget>[
+               Padding(
+                 padding: EdgeInsets.only(top: 5, bottom: 8),
+                 child: RaisedButton(
+                   onPressed: (){},
+                   padding: EdgeInsets.all(13),
+                   color: Colors.black,
+                   child: Text(
+                     "Enviar",
+                     style: TextStyle(
+                       fontSize: 17,
+                       fontWeight: FontWeight.w500,
+                       color: helperColor,
+                     ),
+                   ),
+                 ),
+               )
+             ],
+           ),
+            Expanded(
+                child: FutureBuilder<List<Todos>>(
+                  future: _getMyItems(),
+                  builder: (context, snapshot) {
+
+                    var widget;
+
+                    switch(snapshot.connectionState){
+                      case ConnectionState.waiting :
+                        widget = Center(
+                          child: CircularProgressIndicator(
+                            color: Colors.black,
+                          ),
+                        );
+
+                        break;
+                      case ConnectionState.done :
+                        if(snapshot.hasError){
+                          print("Erro no codígo fonte(URL)!");
+                        }else{
+                          return ListView.builder(
+                            padding: EdgeInsets.all(16),
+                            itemCount: snapshot.data!.length,
+                            itemBuilder: (context, index){
+
+                              List<Todos> items = snapshot.data!;
+                              Todos show = items[index];
+
+                              return ListTile(
+                                onTap: (){
+
+                                  showDialog(
+                                      context: context,
+                                      builder: (context){
+
+                                        return AlertDialog(
+                                          backgroundColor: pickColor,
+                                          title: Text(
+                                            "ID: ${show.id.toString()}\n"
+                                                "Title: ${show.title.toString()}",
+                                            style: TextStyle(
+                                                fontSize: 19,
+                                                fontWeight: FontWeight.w500,
+                                                color: Colors.black
+                                            ),),
+                                          titlePadding: EdgeInsets.all(32),
+                                          content: Text(
+                                            "Completed: ${show.comp.toString()}",
+                                            style: TextStyle(
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w400,
+                                                color: Colors.black
+                                            ),
+                                          ),
+                                          actions: <Widget>[
+                                            RaisedButton(
+                                              padding: EdgeInsets.only(top:10, bottom: 10),
+                                              color: helperColor,
+                                              onPressed: (){
+                                                Navigator.pop(context);
+                                              },
+                                              child: Text(
+                                                "Fechar",
+                                                style: TextStyle(
+                                                    fontSize: 18,
+                                                    fontWeight: FontWeight.w600,
+                                                    color: Colors.black
+                                                ),
+                                              ),
+                                            )
+                                          ],
+                                        );
+                                      });
+                                },
+                                title: Text(
+                                  "ID: ${show.id.toString()}\n"
+                                      "Title: ${show.title.toString()}",
+                                  style: TextStyle(
+                                      fontSize: 19,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.black
+                                  ),),
+                                subtitle: Text(
+                                  "Completed: ${show.comp.toString()}",
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w400,
+                                      color: Colors.black
+                                  ),
+                                ),
+                              );
+                            },
+                          );
+                        }
+                    }
+                    return widget;
+                  },
                 ),
-              ),
             )
           ],
         ),
@@ -88,101 +192,5 @@ class _ListFrameState extends State<ListFrame> {
 
 
 /*
-FutureBuilder<List<Todos>>(
-        future: _getMyItems(),
-        builder: (context, snapshot) {
 
-          var widget;
-
-          switch(snapshot.connectionState){
-            case ConnectionState.waiting :
-              widget = Center(
-                child: CircularProgressIndicator(
-                  color: Colors.black,
-                ),
-              );
-
-              break;
-            case ConnectionState.done :
-              if(snapshot.hasError){
-                print("Erro no codígo fonte(URL)!");
-              }else{
-                return ListView.builder(
-                  padding: EdgeInsets.all(16),
-                  itemCount: snapshot.data!.length,
-                  itemBuilder: (context, index){
-
-                    List<Todos> items = snapshot.data!;
-                    Todos show = items[index];
-
-                    return ListTile(
-                      onTap: (){
-
-                        showDialog(
-                            context: context,
-                            builder: (context){
-
-                              return AlertDialog(
-                                backgroundColor: pickColor,
-                                title: Text(
-                                  "ID: ${show.id.toString()}\n"
-                                      "Title: ${show.title.toString()}",
-                                  style: TextStyle(
-                                      fontSize: 19,
-                                      fontWeight: FontWeight.w500,
-                                      color: Colors.black
-                                  ),),
-                                titlePadding: EdgeInsets.all(32),
-                                content: Text(
-                                  "Completed: ${show.comp.toString()}",
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w400,
-                                      color: Colors.black
-                                  ),
-                                ),
-                                actions: <Widget>[
-                                  RaisedButton(
-                                    padding: EdgeInsets.only(top:10, bottom: 10),
-                                    color: helperColor,
-                                    onPressed: (){
-                                      Navigator.pop(context);
-                                    },
-                                    child: Text(
-                                      "Fechar",
-                                      style: TextStyle(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w600,
-                                          color: Colors.black
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              );
-                            });
-                      },
-                      title: Text(
-                        "ID: ${show.id.toString()}\n"
-                        "Title: ${show.title.toString()}",
-                        style: TextStyle(
-                            fontSize: 19,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black
-                        ),),
-                      subtitle: Text(
-                       "Completed: ${show.comp.toString()}",
-                        style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.black
-                        ),
-                      ),
-                    );
-                  },
-                );
-              }
-          }
-          return widget;
-        },
-      )
  */
