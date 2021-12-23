@@ -55,6 +55,9 @@ class _ListFrameState extends State<ListFrame> {
         body: _corpo,
     );
 
+    print("Status da requisição: ${response.statusCode}");
+    print("Conetudo enviado: ${response.body}");
+
   }
 
   @override
@@ -86,7 +89,7 @@ class _ListFrameState extends State<ListFrame> {
                Padding(
                  padding: EdgeInsets.only(top: 5, bottom: 8),
                  child: RaisedButton(
-                   onPressed: (){},
+                   onPressed: _getPost,
                    padding: EdgeInsets.all(13),
                    color: Colors.black,
                    child: Text(
