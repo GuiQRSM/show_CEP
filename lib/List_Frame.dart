@@ -18,9 +18,11 @@ class _ListFrameState extends State<ListFrame> {
 
 
 
-  Future<List<Todos>> _getMyItems(){
+  Future<List<Todos>> _getMyItems() async {
 
-
+    http.Response response;
+    var url = Uri.parse("https://jsonplaceholder.typicode.com/todos");
+    response = await http.get(url);
 
   }
 
