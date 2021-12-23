@@ -24,6 +24,8 @@ class _ListFrameState extends State<ListFrame> {
     var url = Uri.parse("https://jsonplaceholder.typicode.com/todos");
     response = await http.get(url);
 
+    var dataJson = json.decode(response.body);
+
   }
 
   @override
