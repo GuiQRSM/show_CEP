@@ -63,7 +63,22 @@ class _ListFrameState extends State<ListFrame> {
         padding: EdgeInsets.all(16),
         child: Column(
           children: <Widget>[
-
+            Padding(
+              padding: EdgeInsets.only(top: 10),
+              child: RaisedButton(
+                  onPressed: (){},
+                padding: EdgeInsets.all(13),
+                color: Colors.black,
+                child: Text(
+                  "Enviar",
+                  style: TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.w500,
+                    color: helperColor,
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
