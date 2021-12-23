@@ -54,7 +54,12 @@ class _ListFrameState extends State<ListFrame> {
         backgroundColor: pickColor,
         iconTheme: IconThemeData(color: Colors.black),
       ),
-      //body: ,
+      body: FutureBuilder<List<Todos>>(
+        future: _getMyItems(),
+        builder: (context, index) {
+
+        },
+      ),
     );
   }
 }
