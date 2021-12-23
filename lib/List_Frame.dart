@@ -56,7 +56,87 @@ class _ListFrameState extends State<ListFrame> {
       ),
       body: FutureBuilder<List<Todos>>(
         future: _getMyItems(),
-        builder: (context, index) {
+        builder: (context, snapshot) {
+
+          switch(snapshot.connectionState){
+            case ConnectionState.waiting :
+              break;
+            case ConnectionState.done :
+              if(snapshot.hasError){
+                print("Erro no codígo fonte(URL)!");
+              }else{
+                return ListView.builder(
+                  padding: EdgeInsets.all(16),
+                  itemCount: ,
+                  itemBuilder: (context, indice){
+
+
+
+                    return ListTile(
+                      onTap: (){
+
+                        showDialog(
+                            context: context,
+                            builder: (context){
+
+                              return AlertDialog(
+                                backgroundColor: pickColor,
+                                title: Text(
+                                  "teste",
+                                  style: TextStyle(
+                                      fontSize: 19,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.black
+                                  ),),
+                                titlePadding: EdgeInsets.all(32),
+                                content: Text(
+                                  "teste",
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w400,
+                                      color: Colors.black
+                                  ),
+                                ),
+                                actions: <Widget>[
+                                  RaisedButton(
+                                    padding: EdgeInsets.only(top:10, bottom: 10),
+                                    color: helperColor,
+                                    onPressed: (){
+                                      Navigator.pop(context);
+                                    },
+                                    child: Text(
+                                      "Fechar",
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w600,
+                                          color: Colors.black
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              );
+                            });
+                      },
+                      title: Text(
+                        "teste",
+                        style: TextStyle(
+                            fontSize: 19,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.black
+                        ),),
+                      subtitle: Text(
+                       "teste",
+                        style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.black
+                        ),
+                      ),
+                    );
+                  },
+                );
+              }
+          }
 
         },
       ),
@@ -66,76 +146,5 @@ class _ListFrameState extends State<ListFrame> {
 
 
 /*
-ListView.builder(
-          padding: EdgeInsets.all(16),
-          itemCount: _myItems.length,
-            itemBuilder: (context, indice){
 
-            Map<String, dynamic> items = _myItems[indice];
-            dynamic title = items["title"];
-            dynamic desc = items["desc"];
-
-              return ListTile(
-                onTap: (){
-
-                  showDialog(
-                      context: context,
-                      builder: (context){
-
-                        return AlertDialog(
-                          backgroundColor: pickColor,
-                          title: Text(
-                            title.toString(),
-                          style: TextStyle(
-                              fontSize: 19,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.black
-                          ),),
-                          titlePadding: EdgeInsets.all(32),
-                          content: Text(
-                            desc.toString(),
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.w400,
-                                color: Colors.black
-                            ),
-                          ),
-                          actions: <Widget>[
-                            RaisedButton(
-                              padding: EdgeInsets.only(top:10, bottom: 10),
-                                color: helperColor,
-                                onPressed: (){
-                                Navigator.pop(context);
-                                },
-                              child: Text(
-                                "Fechar",
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black
-                                ),
-                              ),
-                            )
-                          ],
-                        );
-                       });
-                },
-                title: Text(
-                    title.toString(),
-                style: TextStyle(
-                  fontSize: 19,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.black
-                ),),
-                subtitle: Text(
-                    desc.toString(),
-                  style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black
-                  ),
-                ),
-              );
-            },
-        )
  */
