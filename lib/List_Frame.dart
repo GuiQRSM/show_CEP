@@ -36,6 +36,10 @@ class _ListFrameState extends State<ListFrame> {
     return _receiver;
   }
 
+  void _getPost() async {
+
+  }
+
   @override
   Widget build(BuildContext context) {
 
