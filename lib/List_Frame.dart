@@ -78,7 +78,8 @@ class _ListFrameState extends State<ListFrame> {
                   itemCount: snapshot.data!.length,
                   itemBuilder: (context, index){
 
-
+                    List<Todos> items = snapshot.data!;
+                    Todos show = items[index];
 
                     return ListTile(
                       onTap: (){
@@ -90,7 +91,8 @@ class _ListFrameState extends State<ListFrame> {
                               return AlertDialog(
                                 backgroundColor: pickColor,
                                 title: Text(
-                                  "teste",
+                                  "ID: ${show.id.toString()}\n"
+                                      "Title: ${show.title.toString()}",
                                   style: TextStyle(
                                       fontSize: 19,
                                       fontWeight: FontWeight.w500,
@@ -98,7 +100,7 @@ class _ListFrameState extends State<ListFrame> {
                                   ),),
                                 titlePadding: EdgeInsets.all(32),
                                 content: Text(
-                                  "teste",
+                                  "Completed: ${show.comp.toString()}",
                                   style: TextStyle(
                                       fontSize: 18,
                                       fontWeight: FontWeight.w400,
@@ -126,14 +128,15 @@ class _ListFrameState extends State<ListFrame> {
                             });
                       },
                       title: Text(
-                        "teste",
+                        "ID: ${show.id.toString()}\n"
+                        "Title: ${show.title.toString()}",
                         style: TextStyle(
                             fontSize: 19,
                             fontWeight: FontWeight.w500,
                             color: Colors.black
                         ),),
                       subtitle: Text(
-                       "teste",
+                       "Completed: ${show.comp.toString()}",
                         style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.w400,
