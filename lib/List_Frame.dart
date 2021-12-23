@@ -47,7 +47,13 @@ class _ListFrameState extends State<ListFrame> {
     });
     http.Response response;
     var url = Uri.parse("https://jsonplaceholder.typicode.com/posts");
-    response = await http.post(url);
+    response = await http.post(
+        url,
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+        body: _corpo,
+    );
 
   }
 
