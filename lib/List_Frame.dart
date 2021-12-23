@@ -13,19 +13,11 @@ var helperColor = Color.fromRGBO(204, 163, 0, 1);
 
 class _ListFrameState extends State<ListFrame> {
 
-  List _myItems = [];
+
 
   void _getMyItems(){
 
-    _myItems = [];
-    for(int g = 0; g <= 10; g++){
 
-      Map<String, dynamic> items = Map();
-      items["title"] = "Elemento ${g};";
-      items["desc"] = "Descrição do elemento ${g}!";
-      _myItems.add(items);
-
-    }
 
   }
 
@@ -38,7 +30,7 @@ class _ListFrameState extends State<ListFrame> {
       backgroundColor: helperColor,
       appBar: AppBar(
         title: Text(
-            "ListFrame",
+            "ListFrameExpanded",
           style: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.w500,
@@ -49,7 +41,15 @@ class _ListFrameState extends State<ListFrame> {
       ),
       body: Container(
         width: double.infinity,
-        child: ListView.builder(
+        child: ,
+      ),
+    );
+  }
+}
+
+
+/*
+ListView.builder(
           padding: EdgeInsets.all(16),
           itemCount: _myItems.length,
             itemBuilder: (context, indice){
@@ -120,8 +120,5 @@ class _ListFrameState extends State<ListFrame> {
                 ),
               );
             },
-        ),
-      ),
-    );
-  }
-}
+        )
+ */
