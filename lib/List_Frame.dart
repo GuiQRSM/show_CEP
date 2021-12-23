@@ -26,6 +26,12 @@ class _ListFrameState extends State<ListFrame> {
 
     var dataJson = json.decode(response.body);
 
+    for(var runner in dataJson){
+
+      Todos inst = Todos(runner["id"], runner["title"], runner["completed"]);
+
+    }
+
   }
 
   @override
