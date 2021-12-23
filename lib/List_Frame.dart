@@ -58,7 +58,22 @@ class _ListFrameState extends State<ListFrame> {
         backgroundColor: pickColor,
         iconTheme: IconThemeData(color: Colors.black),
       ),
-      body: FutureBuilder<List<Todos>>(
+      body: Container(
+        width: double.infinity,
+        padding: EdgeInsets.all(16),
+        child: Column(
+          children: <Widget>[
+
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+/*
+FutureBuilder<List<Todos>>(
         future: _getMyItems(),
         builder: (context, snapshot) {
 
@@ -154,12 +169,5 @@ class _ListFrameState extends State<ListFrame> {
           }
           return widget;
         },
-      ),
-    );
-  }
-}
-
-
-/*
-
+      )
  */
