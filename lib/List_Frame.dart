@@ -87,9 +87,20 @@ class _ListFrameState extends State<ListFrame> {
 
   void _getPatch() async {
 
+    var _bodyPatch = json.encode(
+      {
+        "title": "Nu metal was the last good age of rock",
+      },
+    );
     http.Response response;
     var url = Uri.parse("https://jsonplaceholder.typicode.com/posts/4");
-    response = await http.patch(url);
+    response = await http.patch(
+        url,
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+    body: _bodyPatch,
+    );
 
   }
 
