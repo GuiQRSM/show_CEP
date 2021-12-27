@@ -62,6 +62,9 @@ class _ListFrameState extends State<ListFrame> {
 
   void _getPut() async {
 
+    http.Response response;
+    var url = Uri.parse("https://jsonplaceholder.typicode.com/posts/4");
+
   }
 
   @override
