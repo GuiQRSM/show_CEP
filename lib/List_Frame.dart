@@ -136,7 +136,7 @@ class _ListFrameState extends State<ListFrame> {
                Padding(
                  padding: EdgeInsets.only(top: 5, bottom: 8),
                  child: RaisedButton(
-                   onPressed: _getPost,
+                   onPressed: _getPut,
                    padding: EdgeInsets.all(13),
                    color: Colors.black,
                    child: Text(
