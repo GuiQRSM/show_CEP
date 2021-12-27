@@ -117,7 +117,23 @@ class _ListFrameState extends State<ListFrame> {
                      ),
                    ),
                  ),
-               )
+               ),
+               Padding(
+                 padding: EdgeInsets.only(top: 5, bottom: 8),
+                 child: RaisedButton(
+                   onPressed: (){},
+                   padding: EdgeInsets.all(13),
+                   color: Colors.black,
+                   child: Text(
+                     "Remover",
+                     style: TextStyle(
+                       fontSize: 17,
+                       fontWeight: FontWeight.w500,
+                       color: helperColor,
+                     ),
+                   ),
+                 ),
+               ),
              ],
            ),
             Expanded(
