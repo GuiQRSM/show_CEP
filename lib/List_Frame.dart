@@ -62,12 +62,22 @@ class _ListFrameState extends State<ListFrame> {
 
   void _getPut() async {
 
+    var _putBody = json.encode(
+      {
+        "userId": 2,
+        "id": 4,
+        "title": "Flamming Hot is too bad!",
+        "completed": true
+      },
+    );
     http.Response response;
     var url = Uri.parse("https://jsonplaceholder.typicode.com/posts/4");
     response = await http.put(
         url,
-    headers: ,
-    body: ,
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+    body: _putBody,
     );
 
   }
