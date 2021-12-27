@@ -81,7 +81,11 @@ class _ListFrameState extends State<ListFrame> {
     );
 
     print("Status da requisição: ${response.statusCode}");
-    print("Conetudo atualizado: ${response.body}");
+    print("Contéudo atualizado: ${response.body}");
+
+  }
+
+  void _getDelete() async {
 
   }
 
@@ -136,7 +140,7 @@ class _ListFrameState extends State<ListFrame> {
                Padding(
                  padding: EdgeInsets.only(top: 5, bottom: 8),
                  child: RaisedButton(
-                   onPressed: _getPut,
+                   onPressed: _getPost,
                    padding: EdgeInsets.all(13),
                    color: Colors.black,
                    child: Text(
@@ -152,7 +156,7 @@ class _ListFrameState extends State<ListFrame> {
                Padding(
                  padding: EdgeInsets.only(top: 5, bottom: 8),
                  child: RaisedButton(
-                   onPressed: _getPatch,
+                   onPressed: _getPut,
                    padding: EdgeInsets.all(13),
                    color: Colors.black,
                    child: Text(
