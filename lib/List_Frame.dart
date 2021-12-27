@@ -55,7 +55,7 @@ class _ListFrameState extends State<ListFrame> {
         body: _corpo,
     );
 
-    print("Status da requisição: ${response.statusCode}");
+    print("Status da requisição: ${response.statusCode}.");
     print("Conetudo enviado: ${response.body}");
 
   }
@@ -80,18 +80,11 @@ class _ListFrameState extends State<ListFrame> {
     body: _putBody,
     );
 
-    print("Status da requisição: ${response.statusCode}");
+    print("Status da requisição: ${response.statusCode}.");
     print("Contéudo atualizado: ${response.body}");
 
   }
 
-  void _getDelete() async {
-
-    http.Response response;
-    var url = Uri.parse("https://jsonplaceholder.typicode.com/posts/4");
-    response = await http.delete(url);
-
-  }
 
   void _getPatch() async {
 
@@ -110,8 +103,18 @@ class _ListFrameState extends State<ListFrame> {
     body: _bodyPatch,
     );
 
-    print("Status da requisição: ${response.statusCode}");
+    print("Status da requisição: ${response.statusCode}.");
     print("Contéudo atualizado especificamente: ${response.body}");
+
+  }
+
+  void _getDelete() async {
+
+    http.Response response;
+    var url = Uri.parse("https://jsonplaceholder.typicode.com/posts/4");
+    response = await http.delete(url);
+
+    print("Status da requisição: ${response.statusCode}, item removido com SUCESSO.");
 
   }
 
@@ -176,7 +179,7 @@ class _ListFrameState extends State<ListFrame> {
                Padding(
                  padding: EdgeInsets.only(top: 5, bottom: 8),
                  child: RaisedButton(
-                   onPressed: (){},
+                   onPressed: _getDelete,
                    padding: EdgeInsets.all(13),
                    color: Colors.black,
                    child: Text(
