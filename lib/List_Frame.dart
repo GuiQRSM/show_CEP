@@ -60,6 +60,10 @@ class _ListFrameState extends State<ListFrame> {
 
   }
 
+  void _getPut() async {
+
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -84,7 +88,7 @@ class _ListFrameState extends State<ListFrame> {
         child: Column(
           children: <Widget>[
            Row(
-             mainAxisAlignment: MainAxisAlignment.center,
+             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
              children: <Widget>[
                Padding(
                  padding: EdgeInsets.only(top: 5, bottom: 8),
