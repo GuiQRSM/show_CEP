@@ -198,4 +198,8 @@ class _MainFrameState extends State<MainFrame> {
       ),
     );
   }
+  @override
+  void dispose() {
+    super.dispose();
+  }
 }
