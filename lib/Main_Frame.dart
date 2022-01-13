@@ -63,6 +63,11 @@ class _MainFrameState extends State<MainFrame> {
   }
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: pickColor,
