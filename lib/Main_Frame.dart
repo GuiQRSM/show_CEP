@@ -68,6 +68,11 @@ class _MainFrameState extends State<MainFrame> {
   }
 
   @override
+  void didUpdateWidget(covariant MainFrame oldWidget) {
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: pickColor,
